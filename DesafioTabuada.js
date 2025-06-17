@@ -1,6 +1,7 @@
 prompt = require('prompt-sync')();
 let numero = parseFloat(prompt('Digite o número da tabuada desejada (1 a 20): '));
 let senha;
+
 let tentativas = 0;
 let senhaCorreta = "Senai123";
 
@@ -10,9 +11,21 @@ while (tentativas < 3) {
     if (senha === senhaCorreta) {
         console.log('Tabuada do: ', numero);
         for (let i = 0; i <= 10; i++) {
+            console.log(numero + ' +' + i + ' = ' + (numero + i));
+            
+        }
+        for (let i = 0; i <= 10; i++) {
+            console.log(numero + ' - ' + i + ' = ' + (numero- i));
+        }
+        for (let i = 1; i <= 10; i++) {
             console.log(numero + ' X ' + i + ' = ' + (numero * i));
         }
-        break; // Sai do loop quando a senha estiver correta
+        for (let i = 0; i <= 10; i++) {
+            console.log(numero + ' / ' + i + ' = ' + (numero / i));
+        }
+            break;
+        
+         // Sai do loop quando a senha estiver correta
     } else {
         tentativas++;
         console.log('Senha inválida! Tentativa ', tentativas + ' de 3');
